@@ -1,0 +1,4 @@
+[submodule "odoo"]
+	path = odoo
+	url = https://github.com/comodoo/odoo.git
+	branch = 10.0
