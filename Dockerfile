@@ -15,7 +15,6 @@ RUN set -x \
         libxslt-dev \
         python-dev \
         python-imaging \
-        python-pip \
         python-tk \
         tcl8.5-dev \
         tk8.5-dev \
@@ -27,8 +26,9 @@ RUN set -x \
     && rm -rf /var/lib/apt/lists/* \
     && ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib
 
+COPY ./get-pip.py /posboxless
 COPY ./requirements.txt /posboxless
-RUN pip install -r requirements.txt
+RUN python get-pip.py && pip install -r requirements.txt
 
 COPY ./odoo/addons /posboxless/addons
 COPY ./odoo/odoo /posboxless/odoo
