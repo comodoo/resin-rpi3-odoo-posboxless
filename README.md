@@ -11,5 +11,3 @@ Docker to run Odoo Posboxless on a Raspberrypi3 with ResinOS
 7. Install this container into the Raspberrypi3 (this step will take some time too): `sudo resin local push resin.local -s .`
 8. Connect barcode scanner, printer and other external devices to the Raspberrypi3
 9. Reboot the Raspberrypi3
-
-**WARNING:** Odoo does not require the posboxless and the web client (in this case, electronjs) to run in the same host, you can configure the client in such a way that the barcode scanner, printer, etc. are connected to another computer which is running the posboxless. However, to make this configuration works, the computer running the posboxless also has to run Postgres. We are not covering this case at this moment, so install both in the same board.
